@@ -22,9 +22,10 @@ public class Program
                 SqlCommand sqlCommand = new SqlCommand("select * from Students", sqlConnection);
                 sqlDataReader = sqlCommand.ExecuteReader();
 
+                Console.WriteLine($"\n\t[ NAME ]\t\t[ AGE ]\t\t\t[ BIRTHDAY ]\n");
                 while (sqlDataReader.Read()) 
                 {
-                    Console.WriteLine($"{sqlDataReader["Name"]}\t\t\t{sqlDataReader["Age"]}\t\t\t{sqlDataReader["Birthday"]}");
+                    Console.WriteLine($"\t{sqlDataReader["Name"]}\t\t\t{sqlDataReader["Age"]}\t\t\t{sqlDataReader["Birthday"]}");
                 }
             }
             catch (Exception ex)
